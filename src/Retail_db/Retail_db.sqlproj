@@ -1,0 +1,10 @@
+<Project DefaultTargets="Build">
+  <Sdk Name="Microsoft.Build.Sql" Version="0.1.19-preview" />
+  <PropertyGroup>
+    <Name>Retail_db</Name>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlServer2022</DSP>
+    <ModelCollation>1033, CI</ModelCollation>
+    <RunSqlCodeAnalysis>true</RunSqlCodeAnalysis>
+    <SqlServerVerification>false</SqlServerVerification>
+  </PropertyGroup>
+</Project>
