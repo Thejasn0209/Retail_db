@@ -55,7 +55,7 @@ jobs:
       - name: Deploy to Development
         env:
           CONNECTION_STRING: ${{ secrets.DEVELOPMENT_CONNECTION_STRING }}
-        run: sqlpackage /Action:Publish /SourceFile:Retail_db.dacpac /TargetConnectionString:"$env:CONNECTION_STRING" /p:BlockOnPossibleDataLoss=true
+        run: dotnet sqlpackage /Action:Publish /SourceFile:Retail_db.dacpac /TargetConnectionString:"$env:CONNECTION_STRING" /p:BlockOnPossibleDataLoss=true
         shell: powershell
 
   deploy_uat:
@@ -76,7 +76,7 @@ jobs:
       - name: Deploy to UAT
         env:
           CONNECTION_STRING: ${{ secrets.UAT_CONNECTION_STRING }}
-        run: sqlpackage /Action:Publish /SourceFile:Retail_db.dacpac /TargetConnectionString:"$env:CONNECTION_STRING" /p:BlockOnPossibleDataLoss=true
+        run: dotnet sqlpackage /Action:Publish /SourceFile:Retail_db.dacpac /TargetConnectionString:"$env:CONNECTION_STRING" /p:BlockOnPossibleDataLoss=true
         shell: powershell
 
   deploy_production:
@@ -98,6 +98,6 @@ jobs:
       - name: Deploy to Production
         env:
           CONNECTION_STRING: ${{ secrets.PRODUCTION_CONNECTION_STRING }}
-        run: sqlpackage /Action:Publish /SourceFile:Retail_db.dacpac /TargetConnectionString:"$env:CONNECTION_STRING" /p:BlockOnPossibleDataLoss=true
+        run: dotnet sqlpackage /Action:Publish /SourceFile:Retail_db.dacpac /TargetConnectionString:"$env:CONNECTION_STRING" /p:BlockOnPossibleDataLoss=true
         shell: powershell
 
