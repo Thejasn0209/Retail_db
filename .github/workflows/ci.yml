@@ -54,7 +54,7 @@ jobs:
       - name: Deploy to Development
         run: |
           sqlpackage /Action:Publish \
-            /SourceFile:*.dacpac \
+            /SourceFile:Retail_db.dacpac \
             /TargetConnectionString:"${{ secrets.DEVELOPMENT_CONNECTION_STRING }}" \
             /p:BlockOnPossibleDataLoss=true
 
@@ -75,7 +75,7 @@ jobs:
       - name: Deploy to UAT
         run: |
           sqlpackage /Action:Publish \
-            /SourceFile:*.dacpac \
+            /SourceFile:Retail_db.dacpac \
             /TargetConnectionString:"${{ secrets.UAT_CONNECTION_STRING }}" \
             /p:BlockOnPossibleDataLoss=true
 
@@ -97,7 +97,7 @@ jobs:
       - name: Deploy to Production
         run: |
           sqlpackage /Action:Publish \
-            /SourceFile:*.dacpac \
+            /SourceFile:Retail_db.dacpac \
             /TargetConnectionString:"${{ secrets.PRODUCTION_CONNECTION_STRING }}" \
             /p:BlockOnPossibleDataLoss=true
 
