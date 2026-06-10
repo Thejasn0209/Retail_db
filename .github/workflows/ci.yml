@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dacpac
-          path: '**/*.dacpac'
+          path: 'src/Retail_db/bin/Release/Retail_db.dacpac'
           retention-days: 30
 
   deploy_development:
