@@ -39,7 +39,7 @@ jobs:
 
   deploy_development:
     name: Deploy to Development
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: build
     steps:
       - name: Download dacpac artifact
@@ -49,20 +49,18 @@ jobs:
           path: .
 
       - name: Install SqlPackage
-        run: dotnet tool install --global microsoft.sqlpackage
+        run: dotnet tool update --global microsoft.sqlpackage
+        shell: powershell
 
       - name: Deploy to Development
         env:
           CONNECTION_STRING: ${{ secrets.DEVELOPMENT_CONNECTION_STRING }}
-        run: |
-          sqlpackage /Action:Publish \
-            /SourceFile:Retail_db.dacpac \
-            /TargetConnectionString:"$CONNECTION_STRING" \
-            /p:BlockOnPossibleDataLoss=true
+        run: sqlpackage /Action:Publish /SourceFile:Retail_db.dacpac /TargetConnectionString:"$env:CONNECTION_STRING" /p:BlockOnPossibleDataLoss=true
+        shell: powershell
 
   deploy_uat:
     name: Deploy to UAT
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: deploy_development
     steps:
       - name: Download dacpac artifact
@@ -72,20 +70,18 @@ jobs:
           path: .
 
       - name: Install SqlPackage
-        run: dotnet tool install --global microsoft.sqlpackage
+        run: dotnet tool update --global microsoft.sqlpackage
+        shell: powershell
 
       - name: Deploy to UAT
         env:
           CONNECTION_STRING: ${{ secrets.UAT_CONNECTION_STRING }}
-        run: |
-          sqlpackage /Action:Publish \
-            /SourceFile:Retail_db.dacpac \
-            /TargetConnectionString:"$CONNECTION_STRING" \
-            /p:BlockOnPossibleDataLoss=true
+        run: sqlpackage /Action:Publish /SourceFile:Retail_db.dacpac /TargetConnectionString:"$env:CONNECTION_STRING" /p:BlockOnPossibleDataLoss=true
+        shell: powershell
 
   deploy_production:
     name: Deploy to Production
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: deploy_uat
     environment: Production
     steps:
@@ -96,14 +92,12 @@ jobs:
           path: .
 
       - name: Install SqlPackage
-        run: dotnet tool install --global microsoft.sqlpackage
+        run: dotnet tool update --global microsoft.sqlpackage
+        shell: powershell
 
       - name: Deploy to Production
         env:
           CONNECTION_STRING: ${{ secrets.PRODUCTION_CONNECTION_STRING }}
-        run: |
-          sqlpackage /Action:Publish \
-            /SourceFile:Retail_db.dacpac \
-            /TargetConnectionString:"$CONNECTION_STRING" \
-            /p:BlockOnPossibleDataLoss=true
+        run: sqlpackage /Action:Publish /SourceFile:Retail_db.dacpac /TargetConnectionString:"$env:CONNECTION_STRING" /p:BlockOnPossibleDataLoss=true
+        shell: powershell
 
