@@ -2,7 +2,7 @@
   <Sdk Name="Microsoft.Build.Sql" Version="0.2.0-preview" />
   <PropertyGroup>
     <Name>Retail_db</Name>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlServer2022</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <ModelCollation>1033, CI</ModelCollation>
     <RunSqlCodeAnalysis>true</RunSqlCodeAnalysis>
     <SqlServerVerification>false</SqlServerVerification>
