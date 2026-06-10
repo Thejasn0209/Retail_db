@@ -52,10 +52,12 @@ jobs:
         run: dotnet tool install --global microsoft.sqlpackage
 
       - name: Deploy to Development
+        env:
+          CONNECTION_STRING: ${{ secrets.DEVELOPMENT_CONNECTION_STRING }}
         run: |
           sqlpackage /Action:Publish \
             /SourceFile:Retail_db.dacpac \
-            /TargetConnectionString:"${{ secrets.DEVELOPMENT_CONNECTION_STRING }}" \
+            /TargetConnectionString:"$CONNECTION_STRING" \
             /p:BlockOnPossibleDataLoss=true
 
   deploy_uat:
@@ -73,10 +75,12 @@ jobs:
         run: dotnet tool install --global microsoft.sqlpackage
 
       - name: Deploy to UAT
+        env:
+          CONNECTION_STRING: ${{ secrets.UAT_CONNECTION_STRING }}
         run: |
           sqlpackage /Action:Publish \
             /SourceFile:Retail_db.dacpac \
-            /TargetConnectionString:"${{ secrets.UAT_CONNECTION_STRING }}" \
+            /TargetConnectionString:"$CONNECTION_STRING" \
             /p:BlockOnPossibleDataLoss=true
 
   deploy_production:
@@ -95,9 +99,11 @@ jobs:
         run: dotnet tool install --global microsoft.sqlpackage
 
       - name: Deploy to Production
+        env:
+          CONNECTION_STRING: ${{ secrets.PRODUCTION_CONNECTION_STRING }}
         run: |
           sqlpackage /Action:Publish \
             /SourceFile:Retail_db.dacpac \
-            /TargetConnectionString:"${{ secrets.PRODUCTION_CONNECTION_STRING }}" \
+            /TargetConnectionString:"$CONNECTION_STRING" \
             /p:BlockOnPossibleDataLoss=true
 
