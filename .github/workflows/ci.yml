@@ -81,7 +81,7 @@ jobs:
     name: Deploy to Production
     runs-on: ubuntu-latest
     needs: deploy_uat
-      environment: Production
+    environment: Production
     steps:
       - name: Download dacpac artifact
         uses: actions/download-artifact@v4
