@@ -5,7 +5,7 @@ CREATE TABLE [dbo].[projects]
     [repository_url] varchar(500) NULL,
     [default_branch] varchar(100) NULL,
     [sql_server_version] varchar(50) NULL,
-    [created_at] datetime NULL
+    [created_at] datetime NULL,
     [notes] NVARCHAR(MAX) NULL
 )
-GO ,
+GO
