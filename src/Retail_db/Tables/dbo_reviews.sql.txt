@@ -1,0 +1,10 @@
+CREATE TABLE [dbo].[reviews]
+(
+    [id] INT IDENTITY(1,1) NOT NULL,
+    [user_id] INT NOT NULL,
+    [product_name] VARCHAR(255) NOT NULL,
+    [rating] INT NOT NULL,
+    [comment] NVARCHAR(MAX) NULL,
+    [review_date] DATETIME DEFAULT GETDATE() NULL
+)
+GO
