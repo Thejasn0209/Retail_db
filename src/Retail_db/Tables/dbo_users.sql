@@ -1,9 +1,10 @@
-CREATE TABLE [dbo].[users]
+CREATE TABLE [dbo].[orders]
 (
-    [id] int IDENTITY(1,1) NOT NULL,
-    [username] varchar(150) NOT NULL,
-    [email] varchar(255) NOT NULL,
-    [role] varchar(50) DEFAULT 'user' NOT NULL,
-    [created_at] datetime DEFAULT GETDATE() NULL
+    [id] INT IDENTITY(1,1) NOT NULL,
+    [user_id] INT NOT NULL,
+    [product_name] VARCHAR(255) NOT NULL,
+    [amount] DECIMAL(18,2) NOT NULL,
+    [status] VARCHAR(50) DEFAULT 'Pending' NOT NULL,
+    [order_date] DATETIME DEFAULT GETDATE() NULL
 )
 GO
