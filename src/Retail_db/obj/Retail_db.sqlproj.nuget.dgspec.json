@@ -1,0 +1,57 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\tejas\\Downloads\\Retail_db\\src\\Retail_db\\Retail_db.sqlproj": {}
+  },
+  "projects": {
+    "C:\\Users\\tejas\\Downloads\\Retail_db\\src\\Retail_db\\Retail_db.sqlproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\tejas\\Downloads\\Retail_db\\src\\Retail_db\\Retail_db.sqlproj",
+        "projectName": "Retail_db",
+        "projectPath": "C:\\Users\\tejas\\Downloads\\Retail_db\\src\\Retail_db\\Retail_db.sqlproj",
+        "packagesPath": "C:\\Users\\tejas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tejas\\Downloads\\Retail_db\\src\\Retail_db\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\tejas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net46": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU5128"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net46": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0, )",
+              "autoReferenced": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+C:\Users\tejas\Downloads\Retail_db\src\Retail_db\bin\Debug\Retail_db.dacpac
+C:\Users\tejas\Downloads\Retail_db\src\Retail_db\bin\Debug\Retail_db.dll
+C:\Users\tejas\Downloads\Retail_db\src\Retail_db\bin\Debug\Retail_db.pdb
+C:\Users\tejas\Downloads\Retail_db\src\Retail_db\obj\Debug\Retail_db.sqlproj.AssemblyReference.cache
+C:\Users\tejas\Downloads\Retail_db\src\Retail_db\obj\Debug\Retail_db.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tejas\Downloads\Retail_db\src\Retail_db\obj\Debug\Retail_db.sourcelink.json
+C:\Users\tejas\Downloads\Retail_db\src\Retail_db\obj\Debug\Model.xml
+C:\Users\tejas\Downloads\Retail_db\src\Retail_db\obj\Debug\refactor.xml
+C:\Users\tejas\Downloads\Retail_db\src\Retail_db\obj\Debug\postdeploy.sql
+C:\Users\tejas\Downloads\Retail_db\src\Retail_db\obj\Debug\predeploy.sql
+C:\Users\tejas\Downloads\Retail_db\src\Retail_db\obj\Debug\Retail_db.dll
+C:\Users\tejas\Downloads\Retail_db\src\Retail_db\obj\Debug\Retail_db.pdb
