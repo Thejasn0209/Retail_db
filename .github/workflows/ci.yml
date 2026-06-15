@@ -83,6 +83,25 @@ jobs:
           sqlpackage /Action:Publish /SourceFile:Retail_db.dacpac /TargetConnectionString:"$env:CONNECTION_STRING" /p:BlockOnPossibleDataLoss=true
         shell: powershell
 
+      - name: Run Schema Validations
+        env:
+          CONNECTION_STRING: ${{ secrets.UAT_CONNECTION_STRING }}
+        run: |
+          $conn = "$env:CONNECTION_STRING"
+          $connection = New-Object System.Data.SqlClient.SqlConnection
+          $connection.ConnectionString = $conn
+          $connection.Open()
+          $command = $connection.CreateCommand()
+          $command.CommandText = "SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME IN ('users', 'orders');"
+          $result = $command.ExecuteScalar()
+          Write-Output "Verified: Found $result critical tables in UAT database."
+          $connection.Close()
+          if ($result -lt 2) {
+              Write-Error "Validation FAILED: Required tables ('users' and 'orders') are missing in UAT!"
+              exit 1
+          }
+        shell: powershell
+
   deploy_production:
     name: Deploy to Production
     runs-on: self-hosted
