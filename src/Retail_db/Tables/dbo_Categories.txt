@@ -1,0 +1,8 @@
+CREATE TABLE [dbo].[categories]
+(
+    [id] INT IDENTITY(1,1) NOT NULL,
+    [name] VARCHAR(100) NOT NULL,
+    [description] NVARCHAR(500) NULL,
+    [created_at] DATETIME DEFAULT GETDATE() NULL
+)
+GO
